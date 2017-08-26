@@ -1,7 +1,17 @@
 <div class="main posts-show">
   <div class="container">
     <div class="posts-show-item">
-      <p><%= "idが「#{@id}」の投稿詳細画面です" %></p>
+      <p>
+        <%= @post.content %>
+      </p>
+      <div class="post-time">
+        <%= @post.created_at %>
+      </div>
+      <div class="post-menus">
+        <%= link_to("編集", "/posts/#{@post.id}/edit") %>
+        <%= link_to("削除", "/posts/#{@post.id}/destroy",{method:"post"}) %><!-- destroyアクションへのリンクを作成してください -->
+
+      </div>
     </div>
   </div>
 </div>
